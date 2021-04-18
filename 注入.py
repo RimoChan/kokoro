@@ -15,5 +15,6 @@ if sys.argv == ['']:
     try:
         code.interact(readfunc=p, banner=banner, local={'可可萝': 可可萝}, exitmsg='')
     except SystemExit as e:
-        os._exit(e.code)
+        if e.code:
+            os._exit(e.code)
     os._exit(0)
